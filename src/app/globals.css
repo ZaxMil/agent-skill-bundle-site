@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07070c;
+  --bg-soft: #0c0c14;
+  --surface: rgba(20, 20, 32, 0.55);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --gold: #c9a86a;
+  --gold-dim: #8a7448;
+  --gold-bright: #e8cf9a;
+  --ink: #e8e6f0;
+  --ink-muted: #9b97ad;
+  --ink-faint: #5c5a6e;
+  --glow-gold: rgba(201, 168, 106, 0.22);
+  --glow-violet: rgba(124, 108, 231, 0.16);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+  --color-gold-bright: var(--gold-bright);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* ambient background glow — very low, outer */
+.bg-ambient {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% -5%, rgba(124, 108, 231, 0.10), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 85% 15%, rgba(201, 168, 106, 0.06), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 10% 90%, rgba(124, 108, 231, 0.05), transparent 70%),
+    var(--bg);
+}
+
+/* glass surface */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* thin gold hairline */
+.hairline-gold {
+  border-color: rgba(201, 168, 106, 0.25);
+}
+
+/* subtle outer glow — never inner */
+.glow-gold {
+  box-shadow: 0 0 40px -8px var(--glow-gold), 0 0 0 1px rgba(201, 168, 106, 0.12);
+}
+
+.glow-violet {
+  box-shadow: 0 0 50px -10px var(--glow-violet), 0 0 0 1px rgba(124, 108, 231, 0.10);
+}
+
+/* category card hover — outer glow, no movement */
+.card-cat {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-cat:hover {
+  border-color: rgba(201, 168, 106, 0.30);
+  box-shadow: 0 0 44px -10px var(--glow-gold), 0 0 0 1px rgba(201, 168, 106, 0.10);
+}
+
+/* number treatment */
+.num {
+  font-family: var(--font-display), serif;
+  font-variant-numeric: lining-nums;
+  letter-spacing: 0.02em;
+}
+
+/* display serif */
+.display {
+  font-family: var(--font-display), serif;
+}
+
+/* mono */
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* outlined subtle control — buttons must NOT move under cursor */
+.btn-ghost {
+  border: 1px solid var(--surface-border);
+  color: var(--ink-muted);
+  background: transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  color: var(--ink);
+  border-color: rgba(201, 168, 106, 0.45);
+  background: rgba(201, 168, 106, 0.05);
+}
+.btn-ghost:active {
+  background: rgba(201, 168, 106, 0.10);
+}
+
+.btn-gold {
+  border: 1px solid rgba(201, 168, 106, 0.55);
+  color: var(--gold-bright);
+  background: linear-gradient(180deg, rgba(201, 168, 106, 0.14), rgba(201, 168, 106, 0.05));
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-gold:hover {
+  color: #fff7e6;
+  border-color: rgba(201, 168, 106, 0.8);
+  box-shadow: 0 0 28px -6px var(--glow-gold);
+}
+
+/* reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
