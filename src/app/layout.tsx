@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Agent Skill Bundle — 116 Curated Skills for AI Agents",
   description:
     "116 battle-tested agent skills across design, security, process, multiplayer, WordPress, marketing, and QA. One command to install. Zero vibe-coding mistakes.",
-  metadataBase: new URL("https://zax-million.github.io/agent-skill-bundle"),
+  metadataBase: new URL("https://zax-million.github.io/agent-skill-bundle-site"),
   openGraph: {
     title: "Agent Skill Bundle — 116 Curated Skills",
     description:
