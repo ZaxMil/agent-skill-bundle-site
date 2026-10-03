@@ -3,7 +3,7 @@
 Static Next.js landing page for the [Agent Skill Bundle](https://github.com/ZaxMil/agent-skill-bundle) — 174 curated agent skills, hosted on GitHub Pages.
 
 ## Live site
-https://zax-million.github.io/agent-skill-bundle/
+https://zaxmil.github.io/agent-skill-bundle/
 
 ## Stack
 - Next.js 16 (static export) + TypeScript + Tailwind CSS v4
