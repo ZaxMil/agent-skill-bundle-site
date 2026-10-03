@@ -1,6 +1,6 @@
 # Agent Skill Bundle — Website
 
-Static Next.js landing page for the [Agent Skill Bundle](https://github.com/ZAX-MILLION/agent-skill-bundle) — 116 curated agent skills, hosted on GitHub Pages.
+Static Next.js landing page for the [Agent Skill Bundle](https://github.com/ZaxMil/agent-skill-bundle) — 174 curated agent skills, hosted on GitHub Pages.
 
 ## Live site
 https://zax-million.github.io/agent-skill-bundle/
